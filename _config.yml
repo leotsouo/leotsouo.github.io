@@ -41,11 +41,15 @@ exclude:
   - tests
   - screenshots
   - reports
+  - authoring
   - .github
   - .bundle
 sass:
   style: compressed
 collections:
+  papers:
+    output: true
+    permalink: /papers/:name/
   projects:
     output: true
     permalink: /projects/:name/
@@ -66,3 +70,15 @@ defaults:
     values:
       layout: single
       show_date: true
+  - scope:
+      path: ""
+      type: papers
+    values:
+      layout: paper
+      show_date: false
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      show_date: false

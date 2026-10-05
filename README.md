@@ -18,6 +18,9 @@ bundle exec jekyll serve --host 127.0.0.1
 ```sh
 JEKYLL_ENV=production bundle exec jekyll build --strict_front_matter
 python3 scripts/verify_site.py
+python3 scripts/verify_navigation.py
+python3 scripts/verify_content.py
+python3 scripts/test_content_templates.py
 ```
 
 The build verifies generated HTML pages, internal links, language metadata, expected routes, source-file exclusions, and no automatically loaded external resources.
@@ -26,7 +29,10 @@ The build verifies generated HTML pages, internal links, language metadata, expe
 
 - `_config.yml`: identity and build settings
 - `index.html`: homepage
-- `_pages/`: about, projects, and notes
+- `_pages/`: about, projects, papers, and notes
+- `_papers/`: reading records and bibliographic metadata
+- `_projects/`: individual project pages
+- `_data/profile.yml`: public contact and optional CV/education
 - `_data/projects.yml`: project descriptions and links
 - `_posts/`: dated notes
 - `assets/css/main.scss`: responsive visual styling
