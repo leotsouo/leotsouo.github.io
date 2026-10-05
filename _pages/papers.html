@@ -1,0 +1,14 @@
+---
+permalink: /papers/
+title: 論文閱讀
+excerpt: "整理論文的方法、實驗與限制，留下自己的理解。"
+---
+<p class="page-intro">從問題、方法到實驗，<br>記下論文說了什麼，以及我怎麼理解。</p>
+<p class="collection-intro">這裡收錄論文閱讀紀錄。軟體開發與一般學習內容則放在<a href="{{ '/notes/' | relative_url }}">筆記</a>。</p>
+{% assign papers = site.papers | sort: 'updated' | reverse %}
+{% if papers.size > 0 %}
+<nav class="local-index" aria-label="閱讀狀態">{% for status in site.data.paper_statuses %}{% assign group = papers | where: 'status', status %}{% if group.size > 0 %}<a href="#status-{{ forloop.index }}">{{ status }} · {{ group.size }}</a>{% endif %}{% endfor %}</nav>
+{% for status in site.data.paper_statuses %}{% assign group = papers | where: 'status', status %}{% if group.size > 0 %}<section class="reading-group" id="status-{{ forloop.index }}"><h2>{{ status }}</h2><div class="reading-list">{% for paper in group %}<article class="reading-row"><p class="eyebrow">{{ paper.year }}{% if paper.venue %} · {{ paper.venue | escape }}{% endif %}</p><h3><a href="{{ paper.url | relative_url }}">{{ paper.title | escape }}</a></h3><p>{{ paper.excerpt | strip_html }}</p>{% if paper.tags.size > 0 %}<ul class="tag-list" aria-label="主題">{% for tag in paper.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>{% endif %}</article>{% endfor %}</div></section>{% endif %}{% endfor %}
+{% else %}
+<section class="collection-empty" aria-labelledby="reading-empty-title"><p class="eyebrow">READING LOG</p><h2 id="reading-empty-title">閱讀紀錄整理中</h2><p>目前還沒有公開的論文閱讀紀錄。之後會依「待讀、略讀、精讀、已重現」標示進度，區分原文內容與自己的理解。</p><a class="text-link" href="{{ '/about/#research' | relative_url }}">了解研究方向 {% include direction-icon.html direction='right' %}</a></section>
+{% endif %}
