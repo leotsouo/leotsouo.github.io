@@ -85,7 +85,8 @@ a:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
 .profile-section .eyebrow { padding-top:8px; }
 .profile-section p { max-width:42rem; }
 .page__content > p:not([class]),.page__content > ul { max-width:44rem; }
-.note-date { font-size:.875rem; color:var(--muted); }
+.note-date { display:flex; flex-wrap:wrap; align-items:baseline; gap:.375rem 1rem; font-size:.875rem; color:var(--muted); }
+.note-category { border-left:1px solid var(--line); padding-left:1rem; }
 .page__meta,.pagination { display:none; }
 .page__footer { position:static; margin:0; padding:0; background:var(--panel); border-top:1px solid var(--line); color:var(--muted); }
 .page__footer footer { max-width:1240px; margin:auto; padding:36px 48px; }
