@@ -1,0 +1,67 @@
+# GitHub Pages destination.
+title: Leo Tsou
+name: Leo Tsou
+description: "Leo Tsou，資訊工程碩士生。研究方向為 emotion detection，記錄軟體實作、個人專案與技術筆記。"
+url: "https://leotsouo.github.io"
+baseurl: ""
+locale: "zh-TW"
+timezone: "Etc/UTC"
+repository: "leotsouo/leotsouo.github.io"
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: default
+search: false
+breadcrumbs: false
+atom_feed:
+  hide: true
+author:
+  name: Leo Tsou
+  uri: "https://github.com/leotsouo"
+markdown: kramdown
+highlighter: rouge
+permalink: /notes/:title/
+plugins:
+  - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-sitemap
+include:
+  - _pages
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CONTENT_REVIEW.md
+  - VERIFICATION.md
+  - LICENSE
+  - THIRD_PARTY_NOTICES.md
+  - scripts
+  - vendor
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tests
+  - screenshots
+  - .github
+  - .bundle
+sass:
+  style: compressed
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      classes: wide
+      author_profile: false
+      share: false
+      related: false
+      comments: false
+      read_time: false
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      show_date: true
