@@ -1,0 +1,7 @@
+main:
+  - title: 關於
+    url: /about/
+  - title: 專案
+    url: /projects/
+  - title: 筆記
+    url: /notes/
