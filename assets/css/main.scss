@@ -64,6 +64,7 @@ a:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
 .project-row h3 a:hover { text-decoration:underline; }
 .project-summary { font-size:1rem; color:var(--muted); margin:0!important; }
 .project-open { display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line); text-decoration:none; font-size:1.25rem; }
+.direction-icon { display:inline-block; vertical-align:-.2em; width:20px; height:20px; flex-shrink:0; }
 .project-open:hover { background:var(--panel); border-color:var(--accent); }
 .note-row { display:grid; grid-template-columns:120px minmax(0,1fr) 44px; gap:24px; padding:26px 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); }
 .note-row time { font-size:.875rem; color:var(--muted); font-variant-numeric:tabular-nums; padding-top:3px; }
