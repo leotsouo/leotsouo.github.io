@@ -155,5 +155,7 @@ a:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
 .detail-section p,.reading-body { max-width:48rem; }
 .reading-body { margin:40px 0; }.reading-body h2 { margin-top:36px; }
 .project-flow { padding-left:1.5rem; }.project-flow li { margin-bottom:8px; }
-.detail-links { display:flex; flex-wrap:wrap; gap:12px 28px; margin-top:32px; }
+.detail-links { display:flex; flex-wrap:wrap; align-items:center; gap:16px 40px; margin-top:32px; }
+.detail-links > .text-link { display:inline-flex; align-items:center; gap:8px; }
+@media (max-width:700px) { .detail-links { flex-direction:column; align-items:flex-start; gap:12px; } }
 @media (max-width:700px) { .site-nav { gap:8px 20px; }.collection-empty { padding:24px; }.detail-meta { grid-template-columns:1fr; gap:4px; }.detail-meta dd { margin-bottom:12px; } }
