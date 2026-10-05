@@ -1,0 +1,15 @@
+---
+layout: single
+---
+{% assign project = site.data.projects | where: 'id', page.project_id | first %}
+<p class="eyebrow">{{ project.category | escape }}</p><p class="page-intro">{{ project.description | escape }}</p>
+<nav class="local-index" aria-label="專案介紹目錄"><a href="#problem">問題</a><a href="#flow">使用流程</a>{% if project.role %}<a href="#role">我的角色</a>{% endif %}{% if project.decisions %}<a href="#decisions">設計選擇</a>{% endif %}{% if project.results %}<a href="#results">成果與限制</a>{% endif %}</nav>
+<section class="detail-section" id="problem"><h2>要解決的問題</h2><p>{{ project.problem | escape }}</p></section>
+<section class="detail-section" id="flow"><h2>核心使用流程</h2><ol class="project-flow">{% for step in project.flow %}<li>{{ step | escape }}</li>{% endfor %}</ol></section>
+{% if project.role %}<section class="detail-section" id="role"><h2>我的角色</h2><p>{{ project.role | escape }}</p></section>{% endif %}
+{% if project.stack.size > 0 %}<section class="detail-section"><h2>技術</h2><ul class="tag-list">{% for tech in project.stack %}<li>{{ tech | escape }}</li>{% endfor %}</ul></section>{% endif %}
+{% if project.decisions %}<section class="detail-section" id="decisions"><h2>設計選擇</h2>{{ project.decisions | markdownify }}</section>{% endif %}
+{% if project.results %}<section class="detail-section" id="results"><h2>成果與限制</h2>{{ project.results | markdownify }}</section>{% endif %}
+{% for screenshot in project.screenshots %}<figure><img src="{{ screenshot.path | relative_url }}" alt="{{ screenshot.alt | escape }}" loading="lazy" width="{{ screenshot.width }}" height="{{ screenshot.height }}">{% if screenshot.caption %}<figcaption>{{ screenshot.caption | escape }}</figcaption>{% endif %}</figure>{% endfor %}
+{{ content }}
+<div class="detail-links">{% if project.url %}<a class="text-link" href="{{ project.url | escape }}">{{ project.link_text | escape }} {% include direction-icon.html %}</a>{% endif %}{% if project.demo_url %}<a class="text-link" href="{{ project.demo_url | escape }}">試用專案 {% include direction-icon.html %}</a>{% endif %}<a class="text-link" href="{{ '/projects/' | relative_url }}">全部專案 {% include direction-icon.html direction='right' %}</a></div>

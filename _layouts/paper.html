@@ -1,0 +1,20 @@
+---
+layout: single
+---
+<p class="eyebrow">論文閱讀 · {{ page.status | escape }}</p>
+<dl class="detail-meta">
+{% if page.authors.size > 0 %}<dt>作者</dt><dd>{{ page.authors | join: '、' | escape }}</dd>{% endif %}
+{% if page.year %}<dt>年份</dt><dd>{{ page.year }}</dd>{% endif %}
+{% if page.venue %}<dt>發表於</dt><dd>{{ page.venue | escape }}</dd>{% endif %}
+{% if page.volume %}<dt>卷</dt><dd>{{ page.volume | escape }}</dd>{% endif %}
+{% if page.pages %}<dt>頁碼</dt><dd>{{ page.pages | escape }}</dd>{% endif %}
+{% if page.doi %}<dt>DOI</dt><dd>{{ page.doi | escape }}</dd>{% endif %}
+{% if page.publication_url %}<dt>正式出版</dt><dd><a href="{{ page.publication_url | escape }}">期刊版本 {% include direction-icon.html %}</a></dd>{% endif %}
+{% if page.code_url %}<dt>作者程式碼</dt><dd><a href="{{ page.code_url | escape }}">GitHub {% include direction-icon.html %}</a></dd>{% endif %}
+{% if page.original_url %}<dt>原文</dt><dd><a href="{{ page.original_url | escape }}">閱讀原論文 {% include direction-icon.html %}</a></dd>{% endif %}
+{% if page.started %}<dt>開始閱讀</dt><dd><time datetime="{{ page.started | date: '%Y-%m-%d' }}">{{ page.started | date: '%Y.%m.%d' }}</time></dd>{% endif %}
+{% if page.updated %}<dt>紀錄更新</dt><dd><time datetime="{{ page.updated | date: '%Y-%m-%d' }}">{{ page.updated | date: '%Y.%m.%d' }}</time></dd>{% endif %}
+</dl>
+{% if page.tags.size > 0 %}<ul class="tag-list" aria-label="主題">{% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>{% endif %}
+<div class="reading-body">{{ content }}</div>
+<a class="text-link" href="{{ '/papers/' | relative_url }}">返回論文閱讀 {% include direction-icon.html direction='right' %}</a>
