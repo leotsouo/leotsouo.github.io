@@ -3,5 +3,7 @@ main:
     url: /about/
   - title: 專案
     url: /projects/
+  - title: 論文閱讀
+    url: /papers/
   - title: 筆記
     url: /notes/

@@ -1,0 +1,7 @@
+# Add only explicitly approved public values. Empty fields never render.
+links:
+  - label: GitHub
+    url: https://github.com/leotsouo
+email: leowork930104@gmail.com
+cv_url:
+education: []
