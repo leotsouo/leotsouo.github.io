@@ -1,0 +1,18 @@
+- name: QuestNote
+  category: 日常紀錄
+  number: "01"
+  description: 把待辦事項與寵物收集結合的生活紀錄工具。完成任務後累積獎勵，讓日常進度看得見。
+  tags:
+    - 待辦事項
+    - 寵物收集
+    - 生活紀錄
+  url: https://github.com/leotsouo/questnote-pwa
+  link_text: 在 GitHub 看專案
+- name: Taste Compare
+  category: 飲食探索
+  number: "02"
+  description: 記錄吃過的餐廳與餐點，透過比較整理自己的偏好與排行。
+  tags:
+    - 餐廳與餐點
+    - 偏好比較
+    - 個人排行
