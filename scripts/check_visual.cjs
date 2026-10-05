@@ -42,7 +42,7 @@ const server=http.createServer((req,res)=>{
  }
  await page.setViewportSize({width:390,height:844});
  await page.goto(base+'/');
- await page.getByRole('link',{name:'專案介紹 →',exact:true}).click();
+ await page.getByRole('link',{name:'專案介紹',exact:true}).click();
  assert.ok(page.url().endsWith('/projects/')); report.navigation.push('home CTA → projects');
  await page.getByRole('navigation',{name:'主要導覽'}).getByRole('link',{name:'筆記',exact:true}).click();
  assert.ok(page.url().endsWith('/notes/')); report.navigation.push('mobile nav → notes');
