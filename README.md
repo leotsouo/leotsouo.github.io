@@ -20,7 +20,7 @@ JEKYLL_ENV=production bundle exec jekyll build --strict_front_matter
 python3 scripts/verify_site.py
 ```
 
-The build verifies six HTML pages, internal links, language metadata, expected routes, source-file exclusions, and no automatically loaded external resources.
+The build verifies generated HTML pages, internal links, language metadata, expected routes, source-file exclusions, and no automatically loaded external resources.
 
 ## Content
 
