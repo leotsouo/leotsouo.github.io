@@ -1,5 +1,5 @@
 <div class="project-list">
 {% for project in site.data.projects %}
-<article class="project-row"><span class="project-number" aria-hidden="true">{{ project.number }}</span><div><p class="project-category">{{ project.category }}</p><h3><a href="{{ '/projects/' | relative_url }}#{{ project.name | slugify }}">{{ project.name }}</a></h3></div><p class="project-summary">{{ project.description }}</p><a class="project-open" href="{{ '/projects/' | relative_url }}#{{ project.name | slugify }}" aria-label="閱讀 {{ project.name }} 專案介紹">{% include direction-icon.html %}</a></article>
+<article class="project-row"><span class="project-number" aria-hidden="true">{{ project.number }}</span><div><p class="project-category">{{ project.category }}</p><h3><a href="{{ project.detail_url | relative_url }}">{{ project.name }}</a></h3></div><p class="project-summary">{{ project.description }}</p><a class="project-open" href="{{ project.detail_url | relative_url }}" aria-label="閱讀 {{ project.name }} 專案介紹">{% include direction-icon.html %}</a></article>
 {% endfor %}
 </div>

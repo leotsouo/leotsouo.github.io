@@ -1,0 +1,5 @@
+<ul class="contact-links">
+{% for link in site.data.profile.links %}{% if link.label and link.url %}<li><a class="text-link" href="{{ link.url | escape }}">{{ link.label | escape }} {% include direction-icon.html %}</a></li>{% endif %}{% endfor %}
+{% if site.data.profile.email and site.data.profile.email != '' %}<li><a class="text-link" href="mailto:{{ site.data.profile.email | escape }}">{{ site.data.profile.email | escape }}</a></li>{% endif %}
+{% if site.data.profile.cv_url and site.data.profile.cv_url != '' %}<li><a class="text-link" href="{{ site.data.profile.cv_url | relative_url }}">履歷 / CV {% include direction-icon.html %}</a></li>{% endif %}
+</ul>
