@@ -1,0 +1,8 @@
+{% assign locale = include.locale | default: site.locale %}
+<meta charset="utf-8">
+{% include seo.html locale=locale %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f5ef">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="alternate" type="application/atom+xml" title="Leo Tsou 的筆記" href="{{ '/feed.xml' | relative_url }}">
