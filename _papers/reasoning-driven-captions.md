@@ -1,5 +1,6 @@
 ---
 title: "Reasoning Driven Captions to Assist Noise Robust Speech Emotion Recognition"
+display_title: "以推理描述輔助情緒辨識"
 authors:
   - Snehit B. Chunarkar
   - Chi-Chun Lee
