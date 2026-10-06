@@ -263,3 +263,7 @@ a:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
 .screenshot-cover img { max-width:580px; margin-left:auto; margin-right:auto; }
 .page__content .project-capture { width:100%; max-width:580px; margin-left:0; margin-right:0; }
 .page__content .project-capture img { display:block; width:100%; height:auto; }
+
+/* Keep the primary action readable after its destination has been visited. */
+.button-link:visited { color:var(--paper); }
+@media print { .button-link:visited { color:#222; } }
