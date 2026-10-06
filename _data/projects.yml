@@ -1,6 +1,17 @@
 - id: questnote
   detail_url: /projects/questnote/
   name: QuestNote
+  demo_url: https://questnote.taste-compare.com/
+  site_host: questnote.taste-compare.com
+  cover: /assets/images/projects/questnote-public.png
+  cover_alt: QuestNote 公開介紹網站截圖，包含待辦文案、灰影幼狼與任務示範
+  release_note: 公開介紹網站，可由網站開啟免註冊網頁 App
+  screenshots:
+    - path: /assets/images/projects/questnote-public.png
+      alt: QuestNote 公開網站首頁的真實截圖
+      width: 1164
+      height: 730
+      caption: 2026.10.06 擷取公開介紹網站；畫面中的任務與數值為該網站示範
   category: 日常紀錄
   number: "01"
   description: 把待辦事項與寵物收集結合的生活紀錄工具。完成任務後累積獎勵，讓日常進度看得見。
@@ -15,6 +26,17 @@
 - id: taste-compare
   detail_url: /projects/taste-compare/
   name: Taste Compare
+  demo_url: https://taste-compare.com/
+  site_host: taste-compare.com
+  cover: /assets/images/projects/taste-compare-public.png
+  cover_alt: Taste Compare 公開網站截圖，包含兩份咖哩的口味比較示範
+  release_note: iPhone 測試通知登記開放中，首頁提供免登入比較示範
+  screenshots:
+    - path: /assets/images/projects/taste-compare-public.png
+      alt: Taste Compare 公開網站首頁的真實截圖
+      width: 1164
+      height: 730
+      caption: 2026.10.06 擷取公開介紹網站；餐點圖片與店家為該網站示範內容
   category: 飲食探索
   number: "02"
   description: 記錄吃過的餐廳與餐點，透過比較整理自己的偏好與排行。

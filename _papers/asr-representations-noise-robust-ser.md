@@ -1,5 +1,6 @@
 ---
 title: "A Comprehensive Study on the Effectiveness of ASR Representations for Noise-Robust Speech Emotion Recognition"
+display_title: "ASR 表徵與抗噪情緒辨識"
 authors:
   - Xiaohan Shi
   - Jiajun He

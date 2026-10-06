@@ -25,6 +25,10 @@ python3 scripts/test_content_templates.py
 
 The build verifies generated HTML pages, internal links, language metadata, expected routes, source-file exclusions, and no automatically loaded external resources.
 
+## Design and screenshots
+
+The homepage presents research and selected software projects using a warm editorial layout. Project images are screenshots of the public Taste Compare and QuestNote websites, captured on 2026-10-06. They are lossless PNG crops, not generated interface mockups; local copies keep the website independent of third-party image requests. Images are limited to 580 CSS pixels to avoid enlargement. Product links open their respective public websites.
+
 ## Content
 
 - `_config.yml`: identity and build settings
