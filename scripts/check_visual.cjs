@@ -27,7 +27,7 @@ const server=http.createServer((req,res)=>{
  const page=await browser.newPage({viewport:{width:1440,height:1050},deviceScaleFactor:1});
  page.on('pageerror',e=>report.consoleErrors.push(e.message));
  page.on('request',r=>{if(!r.url().startsWith(base))report.externalRequests.push(r.url());});
- const routes=['/','/about/','/projects/','/notes/','/notes/getting-started/','/404.html'];
+ const routes=['/','/about/','/projects/','/notes/','/notes/getting-started/','/papers/','/papers/asr-representations-noise-robust-ser/','/papers/reasoning-driven-captions/','/projects/questnote/','/projects/taste-compare/','/404.html'];
  for(const width of [320,375,390,430,768,1280,1440,1920]) {
    await page.setViewportSize({width,height:width<768?844:1050});
    for(const route of routes){
@@ -42,6 +42,17 @@ const server=http.createServer((req,res)=>{
  }
  await page.setViewportSize({width:390,height:844});
  await page.goto(base+'/');
+ await page.getByRole('navigation',{name:'主要導覽'}).getByRole('link',{name:'論文閱讀',exact:true}).click();
+ assert.ok(page.url().endsWith('/papers/')); report.navigation.push('home → reading index');
+ await page.getByRole('link',{name:'Reasoning Driven Captions to Assist Noise Robust Speech Emotion Recognition',exact:true}).click();
+ assert.ok(page.url().includes('/papers/reasoning-driven-captions/'));
+ assert.ok((await page.locator('.reading-body').innerText()).includes('略讀'));
+ report.navigation.push('reading index → honest skim record');
+ await page.getByRole('link',{name:'返回論文閱讀',exact:false}).click();
+ assert.ok(page.url().endsWith('/papers/')); report.navigation.push('reading record → index');
+ await page.goto(base+'/');
+ assert.equal(await page.locator('a[href="mailto:leowork930104@gmail.com"]').count(),1);
+ report.navigation.push('approved contact present; no message sent');
  await page.getByRole('link',{name:'專案介紹',exact:true}).click();
  assert.ok(page.url().endsWith('/projects/')); report.navigation.push('home CTA → projects');
  await page.getByRole('navigation',{name:'主要導覽'}).getByRole('link',{name:'筆記',exact:true}).click();

@@ -41,7 +41,7 @@ for p, page in pages.items():
             errors.append(f'{p.relative_to(ROOT)}: missing anchor {href}')
 for expected in ['index.html','about/index.html','projects/index.html','projects/questnote/index.html','projects/taste-compare/index.html','papers/index.html','notes/index.html','notes/getting-started/index.html','404.html','sitemap.xml','feed.xml','assets/css/main.css']:
     if not (ROOT/expected).is_file(): errors.append(f'missing route/asset: {expected}')
-for private in ['Gemfile','Gemfile.lock','README.md','CONTENT_REVIEW.md','VERIFICATION.md','.git/config','scripts/verify_site.py','reports/DESIGN_AUDIT.md','authoring/README.md','authoring/paper-template.md']:
+for private in ['Gemfile','Gemfile.lock','README.md','CONTENT_REVIEW.md','VERIFICATION.md','.git/config','scripts/verify_site.py','reports/DESIGN_AUDIT.md','authoring/README.md','authoring/paper-template.md','AGENTS.md','docs/PRODUCT.md','automation/verify.json']:
     if (ROOT/private).exists(): errors.append(f'build leaks source/private review file: {private}')
 if errors:
     print('\n'.join(errors)); sys.exit(1)
